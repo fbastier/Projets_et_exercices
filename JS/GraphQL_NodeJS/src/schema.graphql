@@ -1,0 +1,31 @@
+"""
+Langage Schema Definition Language (https://www.prisma.io/blog/graphql-sdl-schema-definition-language-6755bcb9ce51) 
+Query // liste des différents buit-in types
+"""
+
+type Query {
+  hello: String
+  longueur: Float
+  largeur: Int
+  TorF: Boolean
+  newId: ID
+  users: [User!]!
+  user(id: ID!): User!
+}
+
+
+# Custom Types  (! -> required)
+
+type User{
+  id: ID!
+  name: String!
+  email: String!
+  age: Int
+}
+
+# Mutation
+
+type Mutation{
+  createUser(id: String!, name: String!, email: String!, age: Int): User!
+  deleteUser(id: ID!): Boolean
+}
