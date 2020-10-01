@@ -1,0 +1,14 @@
+<li [ngClass]="{'list-group-item': true,
+            'list-group-item-success': messageLoveIt === 1,
+            'list-group-item-danger': messageLoveIt === -1}">
+    
+    <div class="row">
+        <div class="col-sm-8"><h4>{{ messageName }}</h4></div>
+        <div class="col-sm-4" style="text-align: right"><p>Posté le {{ messageCreatedAt | date: 'd MMMM y' }}</p></div>
+    
+        <p>{{ messageContent }}</p>
+    
+        <button class="btn btn-success" style="margin-right: 10px;" (click)="onGreen()">J'aime!</button>   
+        <button class="btn btn-danger" (click)="onRed()">Je n'aime pas!</button>
+    </div>
+</li>
